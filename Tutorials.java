@@ -26,7 +26,7 @@ import javax.swing.JTextArea;
 		
 			
 			JFrame frame = new JFrame();
-			frame.setTitle("JFrameOne");
+			frame.setTitle("General");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setSize(500,400);
 			frame.setLocationRelativeTo(null);
@@ -44,7 +44,15 @@ import javax.swing.JTextArea;
 			
 			e.setFont(new Font("Verdana",1,20));
 			
-			e.setText("hihihihihihihihiihhihihihihihihihihihihihihhihihihihihihihihhihihihihi");
+			e.setText("How to open an app (e.g. photos, files, email, internet, calendar, clock, schedule, et cetera.)\n"
+					+ "Click on the desired app of usage with your computer mouse/mousepad.\n"
+					+ "\n"
+					+ "How to close an app\n"
+					+ "Click on the ‘x’ symbol at the top right corner of an open app window. It may prompt you to select if you would really like to shut down the corresponding application.\n"
+					+ "\n"
+					+ "How to select text\n"
+					+ "Selecting text is useful if you want to copy text from somewhere and past it somewhere else. This can be done by holding down your mouse from the start of the portion of text you would like to copy, and dragging your mouse along that line of text until the end of the portion you would like to select. Once you have reached the end of the portion of text you would like to select, you do not need to hold the mouse down.\n"
+					+ "");
 			
 			e.setEditable(false);
 			
@@ -81,3 +89,4 @@ import javax.swing.JTextArea;
 		}
 	}
 	
+
