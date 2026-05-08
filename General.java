@@ -10,7 +10,7 @@ public class General {
 	private int preferredWidth = 800;
 
 	// Defining the data here, just to help with the text formatting
-	private String p1 = "General Help<br>"
+	private String p1 = "<b>General Help</b><br>"
 			+ "<br>"
 			+ "<b>How to open an app (e.g. photos, files, email, internet, calendar, clock, schedule, et cetera.)</b><br>"
 			+ "Click on the desired app of usage with your computer mouse/mousepad.<br>"
@@ -19,7 +19,10 @@ public class General {
 			+ "Click on the ‘x’ symbol at the top right corner of an open app window. It may prompt you to select if you would really like to shut down the corresponding application.<br>"
 			+ "<br>"
 			+ "<b>How to select text</b><br>"
-			+ "Selecting text is useful if you want to copy text from somewhere and past it somewhere else. This can be done by holding down your mouse from the start of the portion of text you would like to copy, and dragging your mouse along that line of text until the end of the portion you would like to select. Once you have reached the end of the portion of text you would like to select, you do not need to hold the mouse down.";
+			+ "Selecting text is useful if you want to copy text from somewhere and past it somewhere else. This can be done by holding down your mouse from the start of the portion of text you would like to copy, and dragging your mouse along that line of text until the end of the portion you would like to select. Once you have reached the end of the portion of text you would like to select, you do not need to hold the mouse down.<br><br>";
+	
+	private String p2 = "<b>Voice Commands</b><br><br>"
+			+ "To activate voice commands, say \"help\" out loud and say one of the possible commands.";
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new General().createUI());
@@ -29,10 +32,12 @@ public class General {
 		JFrame frame = new JFrame("General Help");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(900, 800);
-		frame.setResizable(false);
+		frame.setResizable(false);		
+		frame.setLocationRelativeTo(null);
 
 		// Main container with scroll
 		JPanel outerPanel = new JPanel(new BorderLayout()); // centers content
+		outerPanel.setBackground(Color.WHITE);
 		JScrollPane scrollPane = new JScrollPane(outerPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -41,13 +46,18 @@ public class General {
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setMaximumSize(new Dimension(preferredWidth, Integer.MAX_VALUE)); // allows vertical growth, enable scrolling
+		contentPanel.setBackground(Color.WHITE);
 
 		// Add content
 		contentPanel.add(createText(p1));
 
 		 // This statement adds 20 pixels of fixed vertical space (known as a "strut")
 
-		contentPanel.add(createImage("/Images/Select.png", 250));
+		contentPanel.add(createImage("/Images/Select.png", 150));
+
+		contentPanel.add(Box.createVerticalStrut(20));
+		
+		contentPanel.add(createText(p2));
 
 		contentPanel.add(Box.createVerticalStrut(20));
 
@@ -77,6 +87,7 @@ public class General {
 
 			ScaledImagePanel panel = new ScaledImagePanel(img, preferredHeight);
 			panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+			panel.setBackground(Color.WHITE);
 
 			return panel;
 
