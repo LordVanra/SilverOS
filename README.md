@@ -1,7 +1,7 @@
 # SilverOS
 
 The tutorials utelize Java Swing to create a scrollable JFrame that contains images and text.
-- The text utelizes html for formatting.
+- The text utilizes html for formatting.
 - All images need to be put in an Images folder before running the code.
 
 Citations:
