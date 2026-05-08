@@ -24,10 +24,12 @@ public class Voice {
 		JFrame frame = new JFrame("Voice Command Tutorials");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(900, 800);
-		frame.setResizable(false);
+		frame.setResizable(false);		
+		frame.setLocationRelativeTo(null);
 
 		// Main container with scroll
 		JPanel outerPanel = new JPanel(new BorderLayout()); // centers content
+		outerPanel.setBackground(Color.WHITE);
 		JScrollPane scrollPane = new JScrollPane(outerPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -36,6 +38,7 @@ public class Voice {
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setMaximumSize(new Dimension(preferredWidth, Integer.MAX_VALUE)); // allows vertical growth, enable scrolling
+		contentPanel.setBackground(Color.WHITE);
 
 		// Add content
 		contentPanel.add(createText(p1));
@@ -73,6 +76,7 @@ public class Voice {
 
 			ScaledImagePanel panel = new ScaledImagePanel(img, preferredHeight);
 			panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+			panel.setBackground(Color.WHITE);
 
 			return panel;
 
