@@ -9,7 +9,7 @@ public class GoogleChrome {
 	private int preferredWidth = 800;
 
 	// Defining the data here, just to help with the text formatting
-	private String p1 = "Google Chrome <br><br>\n\r"
+	private String p1 = "<b>Google Chrome</b><br><br>\n\r"
 			+ "Google Chrome is a web browser to access the internet. This will allow you to watch videos, find pictures, open websites, etc.<br><br>\r\n"
 			+ "<strong>How to find something on the internet</strong><br>\r\n"
 			+ "In the search bar spanning across the length of the screen, click once with your mouse and type in the desired matter you wish to find search results for. The browser does the hard work for you, don’t worry! All you have to do is type whatever you’re looking for :)<br>\r\n"
@@ -18,7 +18,7 @@ public class GoogleChrome {
 			+ "AI overview is a helpful tool in which the search query will be summarized and provided directly in simple terms."
 			+ " An AI overview will be identified by a blue star, along with <q>AI Overview</q> at the beginning.";
 
-	private String p2 = "Next to some information, the overview will provide links to its sources. To view these sources, the gray oval can be clicked which will bring up a menu to the sources.<br>";
+	private String p2 = "Next to some information, the overview will provide links to its sources. To view these sources, the gray oval can be clicked which will bring up a menu to the sources.<br><br>";
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new GoogleChrome().createUI());
@@ -28,10 +28,12 @@ public class GoogleChrome {
 		JFrame frame = new JFrame("Google Chrome Help");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(900, 800);
-		frame.setResizable(false);
+		frame.setResizable(false);		
+		frame.setLocationRelativeTo(null);
 
 		// Main container with scroll
 		JPanel outerPanel = new JPanel(new BorderLayout()); // centers content
+		outerPanel.setBackground(Color.WHITE);
 		JScrollPane scrollPane = new JScrollPane(outerPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -40,6 +42,7 @@ public class GoogleChrome {
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setMaximumSize(new Dimension(preferredWidth, Integer.MAX_VALUE)); // allows vertical growth, enable scrolling
+		contentPanel.setBackground(Color.WHITE);
 
 		// Add content
 		contentPanel.add(createText(p1));
@@ -84,6 +87,7 @@ public class GoogleChrome {
 
 			ScaledImagePanel panel = new ScaledImagePanel(img, preferredHeight);
 			panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+			panel.setBackground(Color.WHITE);
 
 			return panel;
 
