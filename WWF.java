@@ -9,7 +9,7 @@ public class WWF {
 	private int preferredWidth = 800;
 
 	// Defining the data here, just to help with the text formatting
-	private String p1 = "<b>Words With Friends Tutorials<\b<br><br>\n\r"
+	private String p1 = "<b>Words With Friends Tutorials</b><br><br>\n\r"
 			+ "<b>How to access the Words with Friends Tutorials:</b><br><br>\r\n"
 			+ "First, click on \"Help\". There should be a drop-down menu that appear, with the first option being \"Getting Started\"\r\n";
 
@@ -27,10 +27,12 @@ public class WWF {
 		JFrame frame = new JFrame("Words With Friends Help");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(900, 800);
-		frame.setResizable(false);
+		frame.setResizable(false);		
+		frame.setLocationRelativeTo(null);
 
 		// Main container with scroll
 		JPanel outerPanel = new JPanel(new BorderLayout()); // centers content
+		outerPanel.setBackground(Color.WHITE);
 		JScrollPane scrollPane = new JScrollPane(outerPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -39,6 +41,7 @@ public class WWF {
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setMaximumSize(new Dimension(preferredWidth, Integer.MAX_VALUE)); // allows vertical growth, enable scrolling
+		contentPanel.setBackground(Color.WHITE);
 
 		// Add content
 		contentPanel.add(createText(p1));
@@ -80,6 +83,7 @@ public class WWF {
 
 			ScaledImagePanel panel = new ScaledImagePanel(img, preferredHeight);
 			panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+			panel.setBackground(Color.WHITE);
 
 			return panel;
 
