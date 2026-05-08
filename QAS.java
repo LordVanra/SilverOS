@@ -12,7 +12,7 @@ public class QAS {
 	// Defining the data here, just to help with the text formatting
 	private String p1 = "<b>Quick Access Shortcuts</b><br>"
 			+ "<br>"
-			+ "<b>How to access a shortcut to access common websites of use from the desktop/homepage:</b><br>"
+			+ "<b>How to access a shortcut to access common websites of use from the desktop/homepage:</b><br><br>"
 			+ "Shortcuts to common websites can be found on the homepage alongside all the other applications. Upon clicking the corresponding icons, you will be automatically taken to the website.<br>"
 			+ "<br>"
 			+ "<b>Common Keyboard Shortcuts</b>";
@@ -23,13 +23,16 @@ public class QAS {
 	}
 
 	private void createUI() {
+		//Setting up the JFrame
 		JFrame frame = new JFrame("Quick Access Shortcuts");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(900, 800);
-		frame.setResizable(false);
+		frame.setResizable(false);		
+		frame.setLocationRelativeTo(null); //Centers the JFrame
 
 		// Main container with scroll
 		JPanel outerPanel = new JPanel(new BorderLayout()); // centers content
+		outerPanel.setBackground(Color.WHITE);
 		JScrollPane scrollPane = new JScrollPane(outerPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -38,13 +41,14 @@ public class QAS {
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 		contentPanel.setMaximumSize(new Dimension(preferredWidth, Integer.MAX_VALUE)); // allows vertical growth, enable scrolling
+		contentPanel.setBackground(Color.WHITE);
 
 		// Add content
 		contentPanel.add(createText(p1));
 
 		contentPanel.add(Box.createVerticalStrut(20));  // This statement adds 20 pixels of fixed vertical space (known as a "strut")
 
-		contentPanel.add(createImage("/Images/KBS.png", 250));
+		contentPanel.add(createImage("/Images/KBS.png", 500));
 
 		contentPanel.add(Box.createVerticalStrut(20));
 
@@ -74,6 +78,7 @@ public class QAS {
 
 			ScaledImagePanel panel = new ScaledImagePanel(img, preferredHeight);
 			panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+			panel.setBackground(Color.WHITE);
 
 			return panel;
 
@@ -98,6 +103,7 @@ public class QAS {
 		}
 
 		@Override
+		//Rescaling the image
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 
