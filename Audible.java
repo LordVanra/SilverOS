@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
-
+/*
+ * Class that creates a JFrame window for the Audible tutorial.
+ */
 public class Audible {
 	
 	private int preferredWidth = 800;
@@ -13,10 +15,16 @@ public class Audible {
 			+ "<b>Navigating audible</b><br>\n\r"
 			+ "At the top you can click “Browse”, which will show a menu with options to select from. If you have a specific book in mind, you can select the “🔍” or “Find your next great listen” before typing out the book you would like to listen to.\n\r";
 	
+	/*
+	 * Opens the Audible tutorial window/runs the code.
+	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new Audible().createUI());
 	}
 
+	/*
+	 * Creates the JFrame, scrollPane, and conentPanel sizings and is also in charge of the main text and image layout.
+	 */
 	private void createUI() {
 		JFrame frame = new JFrame("Audible Help");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,6 +59,11 @@ public class Audible {
 	}
 
 	// Create wrapped, centered text
+	/*
+	 * Takes the String text and converts it into a JLabel with html before aligning (center align) and sizing the text.
+	 * @param text: A string that contains the text of the tutorial
+	 * @return returns the resulting Jlabel with the wrapped, center-aligned text
+	 */
 	private JComponent createText(String text) {
 		JLabel label = new JLabel(
 				"<html><div style='text-align:center; width:600px; font-size:20px;'>" + text + "</div></html>");
