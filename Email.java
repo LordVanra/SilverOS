@@ -2,6 +2,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+/*
+ * Class that creates a JFrame window for the Email tutorial.
+ */
 public class Email {
 	
 	private int preferredWidth = 800;
@@ -12,11 +15,16 @@ public class Email {
 			+ "<b>How to send an email</b><br>"
 			+ "Click on the pencil or ‘+’ button on the screen to draft a new email, where you may type in the email address of the person you would like to send the email to, your own email address as the sender, a subject line, and your message or any files you would like to attach.";
 
-
+	/*
+	 * Opens the Email tutorial window/runs the code.
+	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new Email().createUI());
 	}
 
+	/*
+	 * Creates the JFrame, scrollPane, and conentPanel sizings and is also in charge of the main text and image layout.
+	 */
 	private void createUI() {
 		JFrame frame = new JFrame("Email Help");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,6 +58,11 @@ public class Email {
 	}
 
 	// Create wrapped, centered text
+	/*
+	 * Takes the String text and converts it into a JLabel with html before aligning (center align) and sizing the text.
+	 * @param text: A string that contains the text of the tutorial
+	 * @return returns the resulting Jlabel with the wrapped, center-aligned text
+	 */
 	private JComponent createText(String text) {
 		JLabel label = new JLabel(
 				"<html><div style='text-align:center; width:600px; font-size:20px;'>" + text + "</div></html>");
