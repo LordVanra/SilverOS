@@ -4,6 +4,9 @@ import java.awt.image.BufferedImage;
 import java.io.InputStream;
 import javax.imageio.ImageIO;
 
+/*
+ * Class that creates a JFrame window for the Google Calendar tutorial.
+ */
 public class GoogleCalendar {
 	
 	private int preferredWidth = 800;
@@ -32,10 +35,16 @@ public class GoogleCalendar {
 	
 	private String p3 = "<b>To Delete:</b> Click on the event and look for the <b>Trash Can icon</b>. This will remove it if the plans change.";
 
+	/*
+	 * Opens the Google Calendar tutorial window/runs the code.
+	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new GoogleCalendar().createUI());
 	}
 
+	/*
+	 * Creates the JFrame, scrollPane, and conentPanel sizings and is also in charge of the main text and image layout.
+	 */
 	private void createUI() {
 		JFrame frame = new JFrame("Google Calendar Tutorials");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,6 +98,11 @@ public class GoogleCalendar {
 	}
 
 	// Create wrapped, centered text
+	/*
+	 * Takes the String text and converts it into a JLabel with html before aligning (center align) and sizing the text.
+	 * @param text: A string that contains the text of the tutorial
+	 * @return returns the resulting Jlabel with the wrapped, center-aligned text
+	 */
 	private JComponent createText(String text) {
 		JLabel label = new JLabel(
 				"<html><div style='text-align:center; width:600px; font-size:20px;'>" + text + "</div></html>");
@@ -99,6 +113,11 @@ public class GoogleCalendar {
 	}
 
 	// Create scalable image component
+	/* Creates a buffered image for the image path and puts it in a ScaledImagePanel. The catch returns the image path.
+	 * @param path: A string that is the path of the image formatted as "/Images/[imageName].png"
+	 * @param preferredHeight: the preferred height of the image
+	 * @return returns the ScaledImagePanel with the centered, resized image. If the catch exception occurs it will return the path of the image as a string.
+	 */
 	private JComponent createImage(String path, int preferredHeight) {
 
 		try {
@@ -118,12 +137,20 @@ public class GoogleCalendar {
 	}
 
 	// Custom panel for scaling images
+	/*
+	 * Class that creates a custom panel that allows for the image to be scaled.
+	 */
 	static class ScaledImagePanel extends JPanel {
 
 		private static final long serialVersionUID = 1L;
 
 		private BufferedImage image;
 
+		/*
+		 * Parameter constructor: Constructs a ScaledImagePanel with an input BufferedImage and sets up the range of the panel with the height being constant but the width can be preferably 800 but can stretch if needed.
+		 * @param image: the image as a BufferedImage
+		 * @param preferredHeight: the preferred height of an image
+		 */
 		public ScaledImagePanel(BufferedImage image, int preferredHeight) {
 			this.image = image;
 
@@ -132,6 +159,11 @@ public class GoogleCalendar {
 		}
 
 		@Override
+		//Rescaling the image
+		/*
+		 * Used to center and render the image using graphics. The image is put through an aspect ratio where if the image is smaller than the panel, nothing happens, but if the image is bigger than the panel, it is resized according to the aspect ratio. Then, the image is centered and rendered.
+		 * @param g: allows for rendering of shapes, text, and images using the Graphics class
+		 */
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 
