@@ -2,6 +2,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+/*
+ * Class that creates a JFrame window for the WhatsApp tutorial.
+ */
 public class WhatsApp {
 	
 	private int preferredWidth = 800;
@@ -15,10 +18,16 @@ public class WhatsApp {
 			+ "<br>"
 			+ "You may send messages to those you wish by typing a phone number.<br>";
 
+	/*
+	 * Opens the WhatsApp tutorial window/runs the code.
+	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new WhatsApp().createUI());
 	}
 
+	/*
+	 * Creates the JFrame, scrollPane, and conentPanel sizings and is also in charge of the main text and image layout.
+	 */
 	private void createUI() {
 		JFrame frame = new JFrame("WhatsApp Help");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,6 +61,11 @@ public class WhatsApp {
 	}
 
 	// Create wrapped, centered text
+	/*
+	 * Takes the String text and converts it into a JLabel with html before aligning (center align) and sizing the text.
+	 * @param text: A string that contains the text of the tutorial
+	 * @return returns the resulting Jlabel with the wrapped, center-aligned text
+	 */
 	private JComponent createText(String text) {
 		JLabel label = new JLabel(
 				"<html><div style='text-align:center; width:600px; font-size:20px;'>" + text + "</div></html>");
