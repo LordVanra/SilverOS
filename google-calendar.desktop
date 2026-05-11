@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Calendar
+Comment=Open Google Calendar
+Exec=google-chrome --app=https://calendar.google.com
+Terminal=false
+Type=Application
+Icon=google-calendar
+Categories=Office;

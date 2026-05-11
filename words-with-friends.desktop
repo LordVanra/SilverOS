@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Words With Friends
+Comment=Play Words With Friends
+Exec=google-chrome --app=https://www.wordswithfriends.com
+Terminal=false
+Type=Application
+Icon=applications-games
+Categories=Game;

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Medisafe
+Comment=Medisafe (web fallback)
+Exec=google-chrome --app=https://www.medisafe.com
+Terminal=false
+Type=Application
+Icon=applications-health
+Categories=Utility;

@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Whatsapp
+Comment=Whatsapp (web fallback)
+Exec=google-chrome --app=https://www.whatsapp.com/
+Terminal=false
+Type=Application
+Icon=applications-health
+Categories=Utility;

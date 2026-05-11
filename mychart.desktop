@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=MyChart
+Comment=MyChart (web fallback)
+Exec=google-chrome --app=https://www.mychart.org/
+Terminal=false
+Type=Application
+Icon=applications-health
+Categories=Utility;
